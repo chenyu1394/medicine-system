@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>经办人管理</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div id="" class="container">
+			<div id="">
+				<h3>经办人管理页</h3>
+				<br>
+				<!-- 导航页 -->
+				<ul class="nav nav-tabs">
+					<li class="active"  id="li_add"><a href="#" id="a_add">添加经办人</a></li>
+					<li class=""  id="li_get"><a href="#"  id="a_get" >查看经办人</a></li>
+					<li class=""  id="li_set"><a href="#"  id="a_set">修改经办人</a></li>
+					<li class=""  id="li_remove"><a href="#"  id="a_remove">删除经办人</a></li>
+				</ul>
+				
+				<div id="page_add"><!-- 添加经办人开始 -->
+					<h3>添加经办人</h3>
+					<br>
+					<label class="">编号:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_ano"/>
+					<br>
+					<label class="">姓名:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_aname" />
+					<br>
+					<label class="">性别:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_asex"/>
+					<br>
+					<label class="">电话:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_aphone"/>
+					<br>
+					<label class="">备注:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_aremark"/>
+					<br>
+					<div id="" class="text-center">
+						<button class="btn btn-success" id="doAdd">提交顾客信息</button>
+					</div>
+				</div><!-- 添加经办人结束 -->
+					
+				<div id="page_get"><!-- 查看经办人开始 -->
+					<div id="" class="text-center">
+						<h3 class="text-left">全部经办人</h3>
+						<!-- 导出表格 -->
+						<form action="http://localhost:8080/exportAgency" method="get">
+						<div id="" class="text-left">
+							<button type="submit" class="btn btn-default" title="导出表格"><span class="glyphicon glyphicon-print"></span></button>
+						</div>
+						</form>
+						<hr >
+						<table class="table table-striped table-bordered " id="tb_all">
+							<tr>
+								<th>编号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>电话</th>
+								<th>备注</th>
+								<th>时间</th>
+							</tr>
+							</table>
+						<nav aria-label="Page navigation">
+					  <ul class="pagination">
+						<li>
+						  <a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						  </a>
+						</li>
+						<li><a href="#" id="page_1">1</a></li>
+						<li><a href="#" id="page_2">2</a></li>
+						<li><a href="#" id="page_3">3</a></li>
+						<li><a href="#" id="page_4">4</a></li>
+						<li><a href="#" id="page_5">5</a></li>
+						<li>
+						  <a href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						  </a>
+						</li>
+					  </ul>
+					</nav>
+					<div id="">
+						<h3 class="text-left">根据经办人姓名查询</h3>
+						<div id="" class="text-center">
+							 <div class="input-group">
+							  <input type="text" class="form-control" placeholder="请输入经办人姓名" id="username_aname">
+							  <span class="input-group-btn">
+								<button class="btn btn-default" type="button" id="doGetByAname">查询!</button>
+							  </span>
+						</div>
+						</div>
+					</div>
+					<div id="">
+						<br>
+						<table class="table table-striped table-bordered " id="tb_aname">
+								<tr id="th_aname" >
+								<th>编号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>电话</th>
+								<th>备注</th>
+								<th>时间</th>
+							</tr>
+							
+								
+						</table>
+					</div>
+					</div>
+				</div><!-- 查看经办人结束 -->
+				
+				<div id="page_set"><!-- 修改经办人开始 -->
+					<h3>修改经办人</h3>
+					<br>
+					<label class="">编号:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_ano_set"/>
+					<br>
+					<label class="">姓名:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_aname_set" />
+					<br>
+					<label class="">性别:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_asex_set"/>
+					<br>
+					<label class="">电话:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_aphone_set"/>
+					<br>
+					<label class="">备注:</label>
+					<input type="text" class="form-control" placeholder="必选项" id="te_aremark_set"/>
+					<br>
+					<div id="" class="text-center">
+						<button class="btn btn-warning" id="doSet">提交修改</button>
+					</div>
+				</div><!-- 修改经办人结束 -->
+				
+				<div id="page_remove"><!-- 删除经办人开始 -->
+					<br>
+					<label class="">经办人编号</label>
+					<input type="text" class="form-control" placeholder="输入经办人编号" id="te_agency_remove"/>
+					<br>
+					<div id="" class="text-center">
+						<button class="btn btn-danger" id="doRemove">确认删除</button>
+					</div>
+				</div><!-- 删除经办人结束 -->
+			</div>
+		</div>
+		<footer class="text-center"> 
+		<hr >
+		<br>
+		<br>
+		<span class="small">&copy;版权归王 x x 所有</span>
+		</footer>
+			<!-- 引入依赖 -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- 自定义脚本 -->
+		<script src="js/agency.js"></script>
+		
+	</body>
+</html>

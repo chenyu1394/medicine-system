@@ -1,0 +1,24 @@
+$(function(){
+				$("#frame_client").show();
+				$("#frame_agency").hide();
+				$("#frame_medicine").hide();
+				//跳转顾客页面按钮点击事件
+				$("#a_client").click(function(){
+					$("#frame_client").show();
+					$("#frame_agency").hide();
+					$("#frame_medicine").hide();
+				});
+				//跳转经办人页面按钮点击事件
+					$("#a_agency").click(function(){
+						$("#frame_client").hide();
+						$("#frame_agency").show();
+						$("#frame_medicine").hide();
+					});
+				//跳转药品页面按钮点击事件
+					$("#a_medicine").click(function(){
+						$("#frame_client").hide();
+						$("#frame_agency").hide();
+						$("#frame_medicine").show();
+					});	
+					
+			});

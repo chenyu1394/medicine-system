@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wqg.system.service.admin.mapper.MedicineMapper">
+    <insert id="insertMedicine" parameterType="medicine">
+        insert into medicine(mno, mname, mmode, mefficacy, cno)
+        values(#{mno},#{mname},#{mmode},#{mefficacy},#{cno})
+    </insert>
+
+    <delete id="deleteMedicineByMno" parameterType="string">
+        delete from medicine where mno = #{mno}
+    </delete>
+
+    <update id="updateMedicine" parameterType="string">
+        update medicine set mname = #{mname},mmode = #{mmode},mefficacy = #{mefficacy},cno = #{cno}
+        where mno = #{mno}
+    </update>
+
+    <select id="selectMedicineByMno" parameterType="string" resultType="medicine">
+        select * from medicine where mno = #{mno}
+    </select>
+
+    <select id="selectMedicineByPage" parameterType="_int" resultType="medicine">
+        select * from medicine
+        LIMIT #{position} , 10
+    </select>
+
+    <select id="selectMedicineByCno" parameterType="string" resultType="medicine">
+        select * from medicine where cno = #{cno}
+    </select>
+
+    <select id="selectAllMedicine" resultType="medicine">
+        select * from medicine
+    </select>
+
+    <select id="selectCount" resultType="_int">
+        select COUNT(*) from medicine
+    </select>
+
+    <select id="selectMedicineByMname" parameterType="string" resultType="medicine">
+        select * from medicine where mname = #{mname}
+    </select>
+</mapper>

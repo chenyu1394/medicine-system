@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>首页</title>
+		<!-- 引入css库 -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<style type="text/css">
+			body{background-color:gray }
+		</style>
+	</head>
+	<body>
+		<!--导航-->
+		<nav class="navbar navbar-default" style="border-radius:0">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="index.html">首页</a>
+					</div>
+		
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					  <ul class="nav navbar-nav">
+							<li><a href="#" id="a_client">顾客管理</a></li>
+							<li><a hhref="#" id="a_agency">经办人管理</a></li>
+							<li><a href="#" id="a_medicine">药品管理</a></li>
+						  </ul>
+						  </div>
+						  <!---->
+				</div>
+			</nav>
+			<div id="frame_client">
+				<iframe src="client.html" width="100%" height="1000px" ></iframe>
+			</div>
+			<div id="frame_agency">
+				<iframe src="agency.html" width="100%" height="1000px" ></iframe>
+			</div>
+			<div id="frame_medicine">
+				<iframe src="medicine.html" width="100%" height="1000px" ></iframe>
+			</div>
+			
+	
+		<!-- 引入依赖 -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- 自定义脚本 -->
+		<script src="js/index.js"></script>
+		
+	</body>
+</html>

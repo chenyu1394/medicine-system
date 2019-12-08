@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wqg.system.service.admin.mapper.ClientMapper">
+    <insert id="insertClient" parameterType="client">
+        insert into client(cno, cname, csex, cage, caddress, cphone, csymptom, ano, cremark)
+        values(#{cno},#{cname},#{csex},#{cage},#{caddress},#{cphone},#{csymptom},#{ano},#{cremark})
+    </insert>
+
+    <delete id="deleteClientByCno" parameterType="string">
+        delete from client where cno = #{cno}
+    </delete>
+
+    <update id="updateClient" parameterType="client">
+        update client set cname = #{cname},csex= #{csex},cage = #{cage},caddress=#{caddress},
+        cphone = #{cphone},csymptom = #{csymptom},ano = #{ano},cremark = #{cremark}
+        where cno = #{cno}
+    </update>
+
+    <select id="selectClientByCno" parameterType="string" resultType="client">
+        select * from client where cno = #{cno}
+    </select>
+
+    <select id="selectClientByPage" parameterType="_int" resultType="client">
+         select * from client
+        LIMIT #{position} , 10
+    </select>
+
+    <select id="selectAllClient" resultType="client">
+        select * from client
+    </select>
+
+    <select id="selectClientByAno" parameterType="string" resultType="client">
+        select * from client where ano = #{ano}
+    </select>
+
+    <select id="selectCount" resultType="_int">
+        select COUNT(*) from client
+    </select>
+
+    <select id="selectClientByCname" parameterType="string" resultType="client">
+        select * from client where cname = #{cname}
+    </select>
+</mapper>

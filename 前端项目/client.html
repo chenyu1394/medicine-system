@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>顾客管理</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<style type="text/css">
+			body{background-image: url("images/top.jpg"); }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div id="">
+				<h3>顾客管理页</h3>
+				<br>
+				<br>
+			</div>
+			<!-- 导航页 -->
+			<ul class="nav nav-tabs">
+				<li class="active"  id="li_add"><a href="#" id="a_add">添加顾客</a></li>
+				<li class=""  id="li_get"><a href="#"  id="a_get" >查看顾客</a></li>
+				<li class=""  id="li_set"><a href="#"  id="a_set">修改顾客</a></li>
+				<li class=""  id="li_remove"><a href="#"  id="a_remove">删除顾客</a></li>
+			</ul>
+			<div id="page_add"><!-- 添加顾客 -->
+				<h3>添加顾客</h3>
+				<br>
+				<label class="">编号:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_cno"/>
+				<br>
+				<label class="">姓名:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_cname" />
+				<br>
+				<label class="">性别:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_csex"/>
+				<br>
+				<label class="">年龄:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_cage"/>
+				<br>
+				<label class="">地址:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_caddress"/>
+				<br>
+				<label class="">电话:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_cphone"/>
+				<br>
+				<label class="">症状:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_csymptom"/>
+				<br>
+				<label class="">经办人编号:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_ano" />
+				<br>
+				<label class="">备注:</label>
+				<input type="text" class="form-control" placeholder="必选项" id="te_cremark"/>
+				<br>
+				<div id="" class="text-center">
+					<button class="btn btn-success" id="doAdd">提交顾客信息</button>
+				</div>
+			</div> <!-- 添加顾客结束 -->
+			
+			
+				<div id="page_get">              <!-- 查看顾客开始 -->
+						<div id="" class="text-center">
+							<h3 class="text-left">全部顾客</h3>
+							<!-- 导出表格 -->
+							<form action="http://localhost:8080/exportClient" method="get">
+							<div id="" class="text-left">
+								<button type="submit" class="btn btn-default" title="导出表格"><span class="glyphicon glyphicon-print"></span></button>
+							</div>
+							</form>
+							
+							<hr >
+							<table class="table table-striped table-bordered " id="tb_all">
+								<tr>
+									<th>编号</th>
+									<th>姓名</th>
+									<th>性别</th>
+									<th>年龄</th>
+									<th>地址</th>
+									<th>电话</th>
+									<th>症状</th>
+									<th>经办人</th>
+									<th>备注</th>
+									<th>时间</th>
+								</tr>
+								</table>
+							<nav aria-label="Page navigation">
+						  <ul class="pagination">
+							<li>
+							  <a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							  </a>
+							</li>
+							<li><a href="#" id="page_1">1</a></li>
+							<li><a href="#" id="page_2">2</a></li>
+							<li><a href="#" id="page_3">3</a></li>
+							<li><a href="#" id="page_4">4</a></li>
+							<li><a href="#" id="page_5">5</a></li>
+							<li>
+							  <a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							  </a>
+							</li>
+						  </ul>
+						</nav>
+						
+						</div>
+						<div id="">
+							<h3>根据姓名查询</h3>
+							<div id="" class="text-center">
+								 <div class="input-group">
+								  <input type="text" class="form-control" placeholder="请输入顾客姓名" id="username_cname">
+								  <span class="input-group-btn">
+									<button class="btn btn-default" type="button" id="doGetByCname">查询!</button>
+								  </span>
+							</div>
+							</div>
+						</div>
+						<div id="">
+							<br>
+							<table class="table table-striped table-bordered " id="tb_cname">
+									<tr id="th_cname" >
+									<th>编号</th>
+									<th>姓名</th>
+									<th>性别</th>
+									<th>年龄</th>
+									<th>地址</th>
+									<th>电话</th>
+									<th>症状</th>
+									<th>经办人</th>
+									<th>备注</th>
+									<th>时间</th>
+								</tr>
+								
+									
+							</table>
+						</div>
+						<!-- 根据经办人查找顾客 -->
+						<div id="">
+							<h3>根据经办人编号查找</h3>
+							<div id="" class="text-center">
+								 <div class="input-group">
+								  <input type="text" class="form-control" placeholder="请输入经办人编号" id="username_ano">
+								  <span class="input-group-btn">
+									<button class="btn btn-default" type="button" id="doGetByAno">查询!</button>
+								  </span>
+							</div>
+							</div>
+						</div>
+						<div id="">
+							<br>
+							<table class="table table-striped table-bordered " id="tb_ano">
+									<tr id="th_ano" >
+									<th>编号</th>
+									<th>姓名</th>
+									<th>性别</th>
+									<th>年龄</th>
+									<th>地址</th>
+									<th>电话</th>
+									<th>症状</th>
+									<th>经办人</th>
+									<th>备注</th>
+									<th>时间</th>
+								</tr>
+								
+									
+							</table>
+						</div>
+				<div >
+					<br>
+					
+			</div>
+				</div><!-- 查看顾客结束 -->
+					
+					<div id="page_set"><!-- 修改顾客开始 -->
+						<h3>修改顾客</h3>
+						<br>
+						<label class="">编号:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_cno_set"/>
+						<br>
+						<label class="">姓名:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_cname_set" />
+						<br>
+						<label class="">性别:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_csex_set"/>
+						<br>
+						<label class="">年龄:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_cage_set"/>
+						<br>
+						<label class="">地址:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_caddress_set"/>
+						<br>
+						<label class="">电话:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_cphone_set"/>
+						<br>
+						<label class="">症状:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_csymptom_set"/>
+						<br>
+						<label class="">经办人编号:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_ano_set" />
+						<br>
+						<label class="">备注:</label>
+						<input type="text" class="form-control" placeholder="必选项" id="te_cremark_set"/>
+						<br>
+						<div id="" class="text-center">
+							<button class="btn btn-warning" id="doSet">提交修改</button>
+						</div>
+					</div> <!-- 修改顾客结束 -->
+					
+					<div id="page_remove"> <!-- 删除顾客开始 -->
+						<br>
+						<label class="">顾客编号</label>
+						<input type="text" class="form-control" placeholder="输入顾客编号" id="te_cremark_remove"/>
+						<br>
+						<div id="" class="text-center">
+							<button class="btn btn-danger" id="doRemove">确认删除</button>
+						</div>
+					</div> <!-- 删除顾客结束 -->
+						
+			
+			<footer class="text-center"> 
+			<hr >
+			<br>
+			<br>
+			<span class="small">&copy;版权归王 x x 所有</span>
+			</footer>
+		
+		<!-- 引入依赖 -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- 自定义脚本 -->
+		<script src="js/client.js"></script>
+		
+	</body>
+</html>

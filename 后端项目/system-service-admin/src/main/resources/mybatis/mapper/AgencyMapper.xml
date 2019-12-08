@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wqg.system.service.admin.mapper.AgencyMapper">
+    <insert id="insertAgency" parameterType="agency">
+        insert into agency(ano, aname, asex, aphone, aremark)
+        values(#{ano},#{aname},#{asex},#{aphone},#{aremark})
+    </insert>
+
+    <delete id="deleteAgencyByAno" parameterType="string">
+        delete from agency where ano = #{ano}
+    </delete>
+
+    <update id="updateAgency" parameterType="agency">
+        update agency set aname = #{aname},asex = #{asex},aphone = #{aphone},aremark = #{aremark}
+        where ano = #{ano}
+    </update>
+
+    <select id="selectAgencyByAno" parameterType="string" resultType="agency">
+        select * from agency where ano = #{ano}
+    </select>
+
+    <select id="selectAgencyByPage" parameterType="_int" resultType="agency">
+        select * from agency
+        LIMIT #{position} , 10
+    </select>
+
+    <select id="selectAllAgency" resultType="agency">
+        select * from agency
+    </select>
+
+    <select id="selectCount" resultType="_int">
+        select COUNT(*) from agency
+    </select>
+
+    <select id="selectAgencyByAname" parameterType="string" resultType="agency">
+        select * from agency where aname = #{aname}
+    </select>
+</mapper>
